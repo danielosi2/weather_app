@@ -66,11 +66,31 @@ class WeatherScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  ForeCastItem(),
-                  ForeCastItem(),
-                  ForeCastItem(),
-                  ForeCastItem(),
-                  ForeCastItem(),
+                  ForeCastItem(
+                    icon: Icons.cloud,
+                    time: '00:00',
+                    text: '200',
+                  ),
+                  ForeCastItem(
+                    icon: Icons.sunny,
+                    time: '03:00',
+                    text: '270',
+                  ),
+                  ForeCastItem(
+                    icon: Icons.cloud,
+                    time: '06:00',
+                    text: '210',
+                  ),
+                  ForeCastItem(
+                    icon: Icons.sunny,
+                    time: '09:00',
+                    text: '260',
+                  ),
+                  ForeCastItem(
+                    icon: Icons.cloud,
+                    time: '00:00',
+                    text: '200',
+                  ),
                 ],
               ),
             ),
@@ -80,12 +100,24 @@ class WeatherScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 14),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                AddInfoItem(),
-                AddInfoItem(),
-                AddInfoItem(),
+                AddInfoItem(
+                  icon: Icons.water_drop,
+                  label: 'Humidity',
+                  text: '94',
+                ),
+                AddInfoItem(
+                  icon: Icons.air,
+                  label: 'wind Speed',
+                  text: '7.67',
+                ),
+                AddInfoItem(
+                  icon: Icons.beach_access,
+                  label: 'pressure',
+                  text: '1006',
+                ),
               ],
             )
           ],

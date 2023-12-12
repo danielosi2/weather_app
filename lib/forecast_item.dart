@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ForeCastItem extends StatelessWidget {
-  const ForeCastItem({super.key});
+  const ForeCastItem({super.key, required this.icon, required this.time, required this.text});
+  final IconData icon;
+  final String time;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +14,19 @@ class ForeCastItem extends StatelessWidget {
         width: 100,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-        child: const Column(
+        child: Column(
           children: [
             Text(
-              '3:30',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              time,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Icon(Icons.cloud),
-            SizedBox(height: 8),
-            Text('301.43')
+            const SizedBox(height: 8),
+            Icon(
+              icon,
+              size: 32,
+            ),
+            const SizedBox(height: 8),
+            Text(text)
           ],
         ),
       ),
